@@ -12,54 +12,36 @@ import javax.swing.JButton;
 import java.sql.*;
 import com.microsoft.sqlserver.jdbc.*;
 
-public class GUI extends JFrame {
 
+
+import javax.swing.JTextField;
+
+public class GUI extends JFrame implements ActionListener {
+
+public static void main(String[] args) {
+				
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					GUI frame = new GUI();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
 	public GUI() {
 		setTitle("CompanyDB");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
 		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(46, 39, 85, 21);
-		btnNewButton.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				
-				//establish connection
-				String connectionUrl = "jdbc:sqlserver://localhost:3306;"+
-				"databaseName=FirstCompanyDB;integratedSecurity=true;";
-				
-//				declare JDBC objects
-				Connection con=null;
-				Statement stat = null;
-				ResultSet rs = null;
-				
-				try {
-					Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-					con=DriverManager.getConnection(connectionUrl);
-					
-//					create and execute SQL statement that returns data
-					String SQL = "SELECT * FROM employees";
-					stat = con.createStatement();
-					rs=stat.executeQuery(SQL);
-					
-//					iterate through the data and display it
-					while(rs.next())
-						System.out.println(rs.getString(1));
-					
-				}catch(Exception ee) {
-					ee.printStackTrace();
-				}
-			}
-		});
-			
-		getContentPane().add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Buton2");
+		JButton btnNewButton_1 = new JButton("GetInfo");
 		btnNewButton_1.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				
 				Statement stat = null;
@@ -78,10 +60,12 @@ public class GUI extends JFrame {
 					e1.printStackTrace();
 				}
 				
-				
+				//DataBase info
 				String url = "jdbc:mysql://localhost:3306/FirstCompanyDB?autoReconnect=true&useSSL=false";
 				String username = "root";
 				String password = "password1";
+				
+				
 				Connection connection = null;
 				try {
 					System.out.println("Connecting database...");
@@ -107,5 +91,30 @@ public class GUI extends JFrame {
 		});
 		btnNewButton_1.setBounds(276, 39, 85, 21);
 		getContentPane().add(btnNewButton_1);
+		
+		
+		JButton btnNewButton = new JButton("Add new employee");
+		btnNewButton.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				try {
+					AddNewEmployee a = new AddNewEmployee();
+					
+				} catch (Exception ee) {
+					ee.printStackTrace();
+				}
+			}
+		});
+		
+		btnNewButton.setBounds(30, 52, 155, 21);
+		getContentPane().add(btnNewButton);
+		
+
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }
