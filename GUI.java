@@ -98,7 +98,7 @@ public static void main(String[] args) {
 			
 			public void actionPerformed(ActionEvent e) {
 				try {
-					AddNewEmployee a = new AddNewEmployee();
+						new AddNewEmployee();
 					
 				} catch (Exception ee) {
 					ee.printStackTrace();
