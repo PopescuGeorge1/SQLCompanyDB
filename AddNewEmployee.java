@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Observable;
 
 import javax.swing.JPanel;
+import javax.activation.DataSource;
 import javax.swing.BoxLayout;
 import javax.swing.SwingConstants;
 import javax.swing.JSplitPane;
@@ -37,13 +38,6 @@ public class AddNewEmployee {
 	private JTextField id_field;
 
 
-	/**
-	 * Launch the application.
-	 */
-
-	/**
-	 * Create the application.
-	 */
 	public AddNewEmployee() {
 		frame = new JFrame();
 		frame.setBounds(200,200,500,300);
@@ -134,14 +128,12 @@ public class AddNewEmployee {
 				}
 				
 				//DataBase info
-				String url = "jdbc:mysql://localhost:3306/FirstCompanyDB?autoReconnect=true&useSSL=false";
-				String username = "root";
-				String password = "password1";
-				
+				ArrayList<String[]>info = LoginPanel.credentials();
+			
 				Connection connection = null;
 				try {
 					System.out.println("Connecting database...");
-					connection = DriverManager.getConnection(url,username,password);
+					connection = DriverManager.getConnection(info.get(0)[0],info.get(1)[0],info.get(2)[0]);
 					String SQL1 = "INSERT INTO employees VALUES("
 					+id_field.getText()+", '"
 					+first_name.getText()+"', '"
@@ -166,7 +158,7 @@ public class AddNewEmployee {
 		});
 		frame.getContentPane().add(add_data);
 		
-		
 		frame.setVisible(true);
 	}
+	
 }

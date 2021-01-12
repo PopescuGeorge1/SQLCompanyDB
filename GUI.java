@@ -1,4 +1,4 @@
-import java.awt.BorderLayout;
+ 		import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -10,6 +10,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 
 import java.sql.*;
+import java.util.ArrayList;
+
 import com.microsoft.sqlserver.jdbc.*;
 
 
@@ -18,26 +20,26 @@ import javax.swing.JTextField;
 
 public class GUI extends JFrame implements ActionListener {
 
-public static void main(String[] args) {
-				
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GUI frame = new GUI();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//public static void main(String[] args) {
+//				
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					GUI frame = new GUI();
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 	
 	public GUI() {
 		setTitle("CompanyDB");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
-		
+		setVisible(true);
 		
 		JButton btnNewButton_1 = new JButton("GetInfo");
 		btnNewButton_1.addActionListener(new ActionListener() {
@@ -61,15 +63,12 @@ public static void main(String[] args) {
 				}
 				
 				//DataBase info
-				String url = "jdbc:mysql://localhost:3306/FirstCompanyDB?autoReconnect=true&useSSL=false";
-				String username = "root";
-				String password = "password1";
-				
+				ArrayList<String[]>info = LoginPanel.credentials();
 				
 				Connection connection = null;
 				try {
 					System.out.println("Connecting database...");
-					connection = DriverManager.getConnection(url,username,password);
+					connection = DriverManager.getConnection(info.get(0)[0],info.get(1)[0],info.get(2)[0]);
 					
 					String SQL = "SELECT first_name FROM employees";
 					stat = connection.createStatement();
@@ -117,4 +116,6 @@ public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
 	}
+
+
 }
