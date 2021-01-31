@@ -1,3 +1,4 @@
+package GuiPanels;
 import java.awt.EventQueue;
 import java.awt.Toolkit;
 import java.awt.Window;
@@ -34,7 +35,7 @@ public class LoginPanel extends JFrame{
 
 	public LoginPanel() {
 
-		login.setBounds(750, 300, 350, 450);
+		login.setBounds(750, 300, 397, 877);
 		login.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		login.getContentPane().setLayout(null);
 		
@@ -92,7 +93,7 @@ public class LoginPanel extends JFrame{
 	}
 
 	public static ArrayList<String[]> credentials() {
-		//find branch
+		//find file
         String directoryPath = System.getProperty("user.dir"); //where to look
         File[] filesInDirectory = new File(directoryPath).listFiles(); //list all files
         String path = null;

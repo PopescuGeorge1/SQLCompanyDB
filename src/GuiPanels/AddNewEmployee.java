@@ -1,3 +1,4 @@
+package GuiPanels;
 
 
 import java.awt.EventQueue;

@@ -1,4 +1,6 @@
- 		import java.awt.BorderLayout;
+package GuiPanels;
+
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -13,8 +15,6 @@ import java.sql.*;
 import java.util.ArrayList;
 
 import com.microsoft.sqlserver.jdbc.*;
-
-
 
 import javax.swing.JTextField;
 
