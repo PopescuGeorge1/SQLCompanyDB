@@ -8,17 +8,18 @@
 
 <AnchorPane prefHeight="450.0" prefWidth="270.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home.RegisterController">
    <children>
-      <Button fx:id="cancelButton" layoutX="175.0" layoutY="374.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="35.0" prefWidth="65.0" text="Cancel" />
-      <Button fx:id="signInRegData" layoutX="21.0" layoutY="374.0" mnemonicParsing="false" onAction="#signInButtonOnAction" prefHeight="35.0" prefWidth="65.0" text="Sign In" />
+      <Button fx:id="cancelButton" layoutX="163.0" layoutY="391.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="35.0" prefWidth="78.0" text="Cancel" />
+      <Button fx:id="signInRegData" layoutX="27.0" layoutY="391.0" mnemonicParsing="false" onAction="#signInButtonOnAction" prefHeight="35.0" prefWidth="77.0" text="Sign In" />
       <Label layoutX="23.0" layoutY="28.0" prefHeight="18.0" prefWidth="220.0" text="First Name" />
       <Label layoutX="23.0" layoutY="90.0" prefHeight="18.0" prefWidth="220.0" text="Last Name" />
-      <Label layoutX="27.0" layoutY="157.0" prefHeight="18.0" prefWidth="220.0" text="E-mail" />
+      <Label layoutX="27.0" layoutY="157.0" prefHeight="18.0" prefWidth="220.0" text="E-mail (Username)" />
       <Label layoutX="23.0" layoutY="225.0" prefHeight="18.0" prefWidth="220.0" text="Password" />
       <Label layoutX="21.0" layoutY="290.0" prefHeight="18.0" prefWidth="220.0" text="Retype Password" />
       <PasswordField fx:id="passwordField" layoutX="21.0" layoutY="250.0" prefWidth="220.0" promptText="Password" />
       <PasswordField fx:id="repasswordField" layoutX="21.0" layoutY="322.0" prefWidth="220.0" promptText="Retype Password" />
-      <TextField fx:id="firstNameField" layoutX="23.0" layoutY="54.0" prefHeight="26.0" prefWidth="220.0" promptText="First Name" />
-      <TextField fx:id="lastNameField" layoutX="23.0" layoutY="119.0" prefHeight="26.0" prefWidth="220.0" promptText="Last Name" />
+      <TextField fx:id="firstNameField" layoutX="23.0" layoutY="54.0" prefHeight="26.0" prefWidth="220.0" promptText="Not yet implemented" />
+      <TextField fx:id="lastNameField" layoutX="23.0" layoutY="119.0" prefHeight="26.0" prefWidth="220.0" promptText="Not yet implemented" />
       <TextField fx:id="emailField" layoutX="23.0" layoutY="186.0" prefHeight="26.0" prefWidth="220.0" promptText="E-mail" />
+      <Label fx:id="passMatchLabel" alignment="CENTER" layoutX="21.0" layoutY="358.0" prefWidth="220.0" textFill="RED" />
    </children>
 </AnchorPane>

@@ -29,7 +29,7 @@
             <TextField fx:id="enterUsername" layoutX="65.0" layoutY="89.0" prefWidth="220.0" promptText="Username" />
             <TextField fx:id="enterPassword" layoutX="65.0" layoutY="160.0" prefWidth="220.0" promptText="Password" />
             <Label fx:id="loginMessage" alignment="CENTER" layoutX="65.0" layoutY="200.0" prefWidth="220.0" textAlignment="CENTER" textFill="RED" underline="true" />
-            <Button fx:id="regButton" layoutX="65.0" layoutY="280.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" text="Register" />
+            <Button fx:id="regButton" layoutX="65.0" layoutY="280.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="30.0" prefWidth="220.0" text="Register" />
          </children>
       </AnchorPane>
    </right>
