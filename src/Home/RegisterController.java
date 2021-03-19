@@ -45,10 +45,16 @@ public class RegisterController implements Initializable{
 	public void signInButtonOnAction(ActionEvent e) {
 		String user = emailField.getText();
 		String pass = passwordField.getText();
+		String firstName = firstNameField.getText();
+		String lastName = lastNameField.getText();
 		String checkPass = repasswordField.getText();
 		if(pass.equals(checkPass)) {
-			if(createNewAccount.createAccount(user, checkPass))
+			if(createNewAccount.createAccount(user, checkPass, firstName, lastName)) {
 				System.out.println("Account created successfully");
+				createLoginPanel();
+				Stage stage = (Stage) signInRegData.getScene().getWindow();
+				stage.close();
+			}
 			else
 				System.out.println("Account not created");
 		}

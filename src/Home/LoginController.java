@@ -61,7 +61,7 @@ public class LoginController implements Initializable{
 	}
 	
 	public void registerButtonOnAction(ActionEvent e) {
-		createRegisterForm();//change registered form on successfull login with main panel
+		createRegisterForm();
 		Stage stage = (Stage) regButton.getScene().getWindow();
 		stage.close();
 	}
@@ -69,7 +69,6 @@ public class LoginController implements Initializable{
 	//initialize images
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
         File lockFile = new File("imgRes/lock1.png");
         Image lockImg = new Image(lockFile.toURI().toString());
         lockImage.setImage(lockImg);
@@ -95,7 +94,7 @@ public class LoginController implements Initializable{
 			Parent root = FXMLLoader.load(getClass().getResource("MainPanel.fxml"));
 			Stage mainStage = new Stage();
 			mainStage.initStyle(StageStyle.UNDECORATED);
-			mainStage.setScene(new Scene(root, 500, 800));
+			mainStage.setScene(new Scene(root, 800, 500));
 			mainStage.show();
 		}catch(Exception e) {
 			e.printStackTrace();

@@ -5,20 +5,45 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="450.0" prefWidth="270.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home.RegisterController">
    <children>
-      <Button fx:id="cancelButton" layoutX="163.0" layoutY="391.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="35.0" prefWidth="78.0" text="Cancel" />
-      <Button fx:id="signInRegData" layoutX="27.0" layoutY="391.0" mnemonicParsing="false" onAction="#signInButtonOnAction" prefHeight="35.0" prefWidth="77.0" text="Sign In" />
-      <Label layoutX="23.0" layoutY="28.0" prefHeight="18.0" prefWidth="220.0" text="First Name" />
-      <Label layoutX="23.0" layoutY="90.0" prefHeight="18.0" prefWidth="220.0" text="Last Name" />
-      <Label layoutX="27.0" layoutY="157.0" prefHeight="18.0" prefWidth="220.0" text="E-mail (Username)" />
-      <Label layoutX="23.0" layoutY="225.0" prefHeight="18.0" prefWidth="220.0" text="Password" />
-      <Label layoutX="21.0" layoutY="290.0" prefHeight="18.0" prefWidth="220.0" text="Retype Password" />
+      <Polygon fill="#0d79d7" layoutX="145.0" layoutY="159.0" points="-131.00001525878906, 305.20001220703125, 133.79998779296875, 305.20001220703125, 133.79998779296875, -143.40000915527344" stroke="WHITE" strokeType="INSIDE" />
+      <Polygon fill="#0f65a7" layoutX="49.0" layoutY="104.0" points="-48.99999237060547, 331.20001220703125, 206.1999969482422, -104.0, -48.99999237060547, -104.0" stroke="WHITE" strokeType="INSIDE" />
+      <TextField fx:id="lastNameField" layoutX="23.0" layoutY="119.0" prefHeight="26.0" prefWidth="220.0" promptText="Last Name" />
+      <Button fx:id="cancelButton" layoutX="163.0" layoutY="391.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="35.0" prefWidth="78.0" text="Cancel">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="signInRegData" layoutX="27.0" layoutY="391.0" mnemonicParsing="false" onAction="#signInButtonOnAction" prefHeight="35.0" prefWidth="77.0" text="Sign In" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Label layoutX="23.0" layoutY="28.0" prefHeight="18.0" prefWidth="220.0" text="First Name">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="23.0" layoutY="90.0" prefHeight="18.0" prefWidth="220.0" text="Last Name">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="27.0" layoutY="157.0" prefHeight="18.0" prefWidth="220.0" text="E-mail (Username)">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="23.0" layoutY="225.0" prefHeight="18.0" prefWidth="220.0" text="Password">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="21.0" layoutY="290.0" prefHeight="18.0" prefWidth="220.0" text="Retype Password">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
       <PasswordField fx:id="passwordField" layoutX="21.0" layoutY="250.0" prefWidth="220.0" promptText="Password" />
       <PasswordField fx:id="repasswordField" layoutX="21.0" layoutY="322.0" prefWidth="220.0" promptText="Retype Password" />
-      <TextField fx:id="firstNameField" layoutX="23.0" layoutY="54.0" prefHeight="26.0" prefWidth="220.0" promptText="Not yet implemented" />
-      <TextField fx:id="lastNameField" layoutX="23.0" layoutY="119.0" prefHeight="26.0" prefWidth="220.0" promptText="Not yet implemented" />
+      <TextField fx:id="firstNameField" layoutX="23.0" layoutY="54.0" prefHeight="26.0" prefWidth="220.0" promptText="First Name" />
       <TextField fx:id="emailField" layoutX="23.0" layoutY="186.0" prefHeight="26.0" prefWidth="220.0" promptText="E-mail" />
       <Label fx:id="passMatchLabel" alignment="CENTER" layoutX="21.0" layoutY="358.0" prefWidth="220.0" textFill="RED" />
    </children>
